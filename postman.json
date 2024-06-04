@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "a882115f-9844-49c5-ac00-b550275ed156",
+		"name": "RH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25201586"
+	},
+	"item": [
+		{
+			"name": "Create Recruiter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Teste\",\n    \"email\": \"teste@email.com\",\n    \"password\": \"teste\",\n    \"password_confirmation\": \"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/recruiters",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recruiters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"teste@email.com\",\n    \"password\": \"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/recruiters/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recruiters",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Recruiter",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4fQ.uww_t2GdxGOeGuOuEDaWH0DT-eWBTs7JrjIDOocMjH4"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/recruiters/8",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recruiters",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/recruiters/7",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"recruiters",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create JOB",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.GbtNHOlnlIIPav-91Dpu16-XXsLLI1FVVoJ6Ky_VweY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Title\",\n    \"description\": \"Test description\",\n    \"start_date\": \"2024-06-04 04:30:11\",\n    \"end_date\": \"2024-06-04 04:30:11\",\n    \"recruiter_id\": 1,\n    \"skills\": [\"a, b\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/jobs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show job",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.GbtNHOlnlIIPav-91Dpu16-XXsLLI1FVVoJ6Ky_VweY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/jobs/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete job",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.GbtNHOlnlIIPav-91Dpu16-XXsLLI1FVVoJ6Ky_VweY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/jobs/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Submission",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"appliant\",\n    \"email\": \"appliant@email.com\",\n    \"mobile_phone\": \"31995650804\",\n    \"resume\": \"Good at stuff\",\n    \"job_id\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/submissions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"submissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.GbtNHOlnlIIPav-91Dpu16-XXsLLI1FVVoJ6Ky_VweY",
+			"type": "string"
+		}
+	]
+}
